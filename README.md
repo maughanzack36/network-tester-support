@@ -1,4 +1,4 @@
-# Network Tester public support website
+# NetGauge public support website
 
 Static privacy and support pages for iOS/macOS. Only this directory’s public files belong
 in the separate network-tester-support GitHub repository; never copy app source, backend
