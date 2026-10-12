@@ -25,7 +25,7 @@
 <div class="eyebrow">Your information</div>
 <h1>Privacy policy</h1>
 <p class="lead">This policy covers NetGauge for iPhone and NetGauge Companion for Mac, provided by Zack Maughan.</p>
-<p class="meta">Effective October 9, 2026 · Contact: <a href="mailto:zack.zman99@gmail.com">zack.zman99@gmail.com</a>
+<p class="meta">Effective October 11, 2026 · Contact: <a href="mailto:zack.zman99@gmail.com">zack.zman99@gmail.com</a>
 </p>
 <div class="notice">
 <strong>Before running a WAN test</strong>
@@ -44,7 +44,7 @@
 <article>
 <h2 id="local">1. Local use and companion connection</h2>
 <p>You can use local features without an account. The iPhone stores saved projects, measurements, settings and consent choices locally. The apps also store credentials needed to remember accounts and paired companions.</p>
-<p>Pairing exchanges connection and authentication information between your devices. LAN tests exchange synthetic test traffic and diagnostics with your gateway or the paired Mac. Network observations may include device/interface names, IP addresses, interface or neighbor MAC addresses, link information and timing. These observations can identify devices on your network.</p>
+<p>Pairing exchanges connection and authentication information between your devices. LAN tests exchange synthetic test traffic and diagnostics with your gateway or the paired Mac. Network observations may include device/interface names, IP addresses, interface or neighbor MAC addresses, link information and timing. When the Mac companion is connected by Wi-Fi, they also include its Wi-Fi signal strength, noise, channel and link rate. These observations can identify devices on your network.</p>
 <p>Saved network details can be included in optional cloud synchronization. Exported CSV/PDF files may contain project names, addresses, notes, measurements and selected network details. You decide where to save or share exports.</p>
 <h2 id="accounts">2. Optional accounts and cloud synchronization</h2>
 <p>Email/password and Google sign-in use Supabase authentication. We process your account identifier, email and available name/profile information to sign you in, associate data with your account and synchronize projects. Google handles its own authorization; the app does not receive your Google password.</p>
@@ -52,7 +52,7 @@
 <p>These data support authentication, synchronization, profile display, troubleshooting and operation of the service. The apps do not include advertising SDKs or cross-app advertising tracking.</p>
 <h2 id="internet">3. Internet tests and external services</h2>
 <h3>M-Lab</h3>
-<p>WAN speed tests connect to Measurement Lab (M-Lab), including NDT7 or the multi-connection test mode. M-Lab receives speed/latency measurements, the public IP used for the connection, timestamps and diagnostic environment information. Its test data is public, retained indefinitely and available for Internet research and other uses by third parties. The app does not send your Supabase account identifier, project notes or profile photo as part of an M-Lab test.</p>
+<p>WAN speed tests connect to Measurement Lab (M-Lab), including NDT7 or the multi-connection test mode. M-Lab receives speed/latency measurements, the public IP used for the connection, timestamps and diagnostic environment information. Its test data is public, retained indefinitely and available for Internet research and other uses by third parties. The app does not send your Supabase account identifier, project notes or profile photo as part of an M-Lab test. If you turn on the optional responsiveness test, the app also opens brief connections to the same M-Lab server during the test to time them; they carry no additional data.</p>
 <p>Account deletion or consent withdrawal in these apps does not erase published M-Lab results. For M-Lab’s data practices and requests about its data, see <a href="https://www.measurementlab.net/privacy/">M-Lab’s privacy policy</a>.</p>
 <h3>Provider lookup and connectivity checks</h3>
 <p>After WAN consent, provider lookups contact IPinfo to display Internet-provider information. IPinfo sees the connection’s public IP and request information. See <a href="https://ipinfo.io/privacy-policy">IPinfo’s privacy policy</a> for its handling of that information.</p>
@@ -63,7 +63,7 @@
 <p>Local-network access allows discovery and communication with your companion and LAN devices. Choosing a profile photo shares the image you select. File-export access lets the Mac write to a destination you choose. The apps do not request system location permission, although an IP address can reveal an approximate location.</p>
 <p>Companion control and HTTP transfers use TLS and paired authentication. Native iPerf throughput uses authenticated setup followed by ordinary unencrypted test payload traffic. Account/cloud connections use HTTPS. No method of transmission or storage provides absolute security.</p>
 <h2 id="retention">5. Retention and deletion</h2>
-<p>Local saved data remains until you remove it or the app’s stored data. Cloud account and project data is retained while your account exists. Deleting an individual synced measurement marks it deleted; this is different from deleting the account and does not necessarily immediately remove the underlying database record.</p>
+<p>Local saved data remains until you remove it or the app’s stored data. Cloud account and project data is retained while your account exists. Deleting an individual synced measurement, or the project it is in, removes it from your projects on every device. Its cloud record then keeps only the measured figures (speeds, latency, packet delivery); IP addresses, MAC addresses and Path Check targets are erased from it. The remaining figures are removed when you delete your account.</p>
 <p>Use <strong>Account → Delete Account</strong> in either app to request permanent account deletion. After the server confirms success, the account and associated cloud profile, projects, measurements and avatar are removed, and the local account session is cleared. A failed request is reported so you can retry.</p>
 <p>Account deletion does not remove exported files, another device’s unsynchronized guest projects or published M-Lab data. iPhone deletion can separately include local guest projects when that option is offered. Other devices may retain local copies until they reconnect or you remove their app data.</p>
 <p>Operational logs, service-provider backups and support correspondence are separate from live account records and may remain according to provider retention processes or applicable obligations. We do not promise an immediate purge from every backup. Contact us for current retention details or a data request.</p>
