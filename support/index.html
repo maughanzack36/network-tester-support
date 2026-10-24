@@ -33,6 +33,7 @@
 <aside aria-label="Support contents">
 <a href="#setup">Companion setup</a>
 <a href="#tests">Running tests</a>
+<a href="#alta">Alta iPerf3</a>
 <a href="#accounts">Accounts & projects</a>
 <a href="#privacy">Privacy & deletion</a>
 <a href="#trouble">Troubleshooting</a>
@@ -56,9 +57,35 @@
 <li>
 <strong>Local throughput:</strong> measures traffic between your iPhone and Mac using native iPerf. Both apps are required.</li>
 <li>
-<strong>Advanced tests:</strong> HTTP throughput, UDP and Path Check offer additional diagnostics. Follow each feature’s companion and connectivity instructions.</li>
+<strong>Advanced tests:</strong> Alta iPerf3 tests your iPhone against an Alta router or access point, with no Mac needed (see below). HTTP throughput, UDP and Path Check offer additional diagnostics. Follow each feature’s companion and connectivity instructions.</li>
 </ul>
 <p>Wi-Fi conditions, selected adapters, VPNs, background traffic and the test destination can affect results. Test measurements are not a guaranteed Internet-service speed.</p>
+<h2 id="alta">Set up Alta iPerf3</h2>
+<p>Alta iPerf3 measures throughput between your iPhone and an Alta Labs router or access point, using the iperf3 server built into the device. NetGauge signs in to the device over SSH, starts that server for one test, and stops it afterwards. It changes no settings on the device. You need administrator access to the site in the Alta controller.</p>
+<ol>
+<li>In NetGauge, open <strong>LAN → Advanced Tests</strong>. Alta iPerf3 is the first card. Tap its key button to open <strong>Router Setup</strong>, then <strong>Copy Key</strong> or <strong>Share</strong>.</li>
+<li>Sign in to the Alta controller (the website works on iPhone too), open the site, and go to <strong>Settings → System → SSH Keys</strong>. Add the key and save.</li>
+<li>Wait about a minute for the devices to apply it. One key covers every Alta router and access point in that site.</li>
+<li>Back in Alta iPerf3, the address is your router’s. To test an access point instead, type its address (shown in the Alta controller). Tap <strong>Start router test</strong>.</li>
+<li>The first test with each device asks you to confirm it and shows its key fingerprint. Tap <strong>Trust and Test</strong>. NetGauge remembers it.</li>
+</ol>
+<p>Each test runs a 12-second download and then a 12-second upload, the first 2 seconds of each being warm-up. The device’s own processor sends and receives the traffic, so the result is the speed between your iPhone and that device, not how fast the router routes. Results save to projects like other LAN tests, labeled <em>iPerf3 (Router)</em> with the device’s model and address.</p>
+<details>
+<summary>“The router refused this iPhone’s key”</summary>
+<p>The key is not in that site’s SSH Keys yet, or it was removed or replaced. Copy it again from Router Setup, add it in the controller, wait a minute and retry. A new iPhone, or <strong>Replace Key</strong>, needs the new key added.</p>
+</details>
+<details>
+<summary>“This router isn’t supported yet”</summary>
+<p>Alta iPerf3 works only with Alta Labs routers and access points. Check that the address is an Alta device, not a switch, modem or another brand.</p>
+</details>
+<details>
+<summary>The result says Wi-Fi dropped during the test</summary>
+<p>Wi-Fi disconnected for part of the test. If it reconnected in time, the test finished, but its average includes the time with no connection, so it reads lower than the link really is. Run the test again for a clean result.</p>
+</details>
+<details>
+<summary>Remove NetGauge’s access to a site</summary>
+<p>Delete the key in the Alta controller under SSH Keys. That ends access to every device in the site straight away. Removing a device from Router Setup’s trusted list only makes NetGauge ask again next time; it does not remove access.</p>
+</details>
 <h2 id="accounts">Accounts and saved projects</h2>
 <details>
 <summary>Sign in or create an account</summary>
